@@ -27,6 +27,9 @@ class Config(object):
     # NUMBER OF GPUs to use. When using only a CPU, this needs to be set to 1.
     GPU_COUNT = 1
 
+    # NUMBER OF CPUs to use
+    CPU_COUNT = 1
+
     # Number of images to train with on each GPU. A 12GB GPU can typically
     # handle 2 images of 1024x1024px.
     # Adjust based on your GPU memory and image sizes. Use the highest
