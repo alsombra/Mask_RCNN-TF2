@@ -2167,6 +2167,9 @@ class MaskRCNN(object):
             loss = (
                 tf.reduce_mean(input_tensor=layer.output, keepdims=True)
                 * self.config.LOSS_WEIGHTS.get(name, 1.))
+            # modifications based on the CellSeg paper
+            if name=="mrcnn_class_loss":
+                loss *= CLASS_LOSS_ALPHA 
             self.keras_model.add_loss(loss)
 
         # Add L2 Regularization

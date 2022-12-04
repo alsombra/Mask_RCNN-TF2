@@ -27,8 +27,8 @@ class Config(object):
     # NUMBER OF GPUs to use. When using only a CPU, this needs to be set to 1.
     GPU_COUNT = 1
 
-    # NUMBER OF CPUs to use
-    CPU_COUNT = 1
+    # NUMBER OF worker CPUs to use
+    CPU_COUNT = 0
 
     # Number of images to train with on each GPU. A 12GB GPU can typically
     # handle 2 images of 1024x1024px.
@@ -212,6 +212,11 @@ class Config(object):
 
     # Gradient norm clipping
     GRADIENT_CLIP_NORM = 5.0
+    
+    # Hyperparameter introduced in CellSeg (Lee et al.) to downplay 
+    # the influence of classification loss for single class models
+    CLASS_LOSS_ALPHA = 0.5
+    
 
     def __init__(self):
         """Set values of computed attributes."""
