@@ -2352,8 +2352,7 @@ class MaskRCNN(object):
         if os.name == 'nt':
             workers = 0
         else:
-            workers = multiprocessing.cpu_count()
-
+            workers = self.config.CPU_COUNT #multiprocessing.cpu_count()
         self.keras_model.fit(
             train_generator,
             initial_epoch=self.epoch,
