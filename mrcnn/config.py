@@ -213,10 +213,6 @@ class Config(object):
     # Gradient norm clipping
     GRADIENT_CLIP_NORM = 5.0
     
-    # Hyperparameter introduced in CellSeg (Lee et al.) to downplay 
-    # the influence of classification loss for single class models
-    CLASS_LOSS_ALPHA = 0.5
-    
 
     def __init__(self):
         """Set values of computed attributes."""
