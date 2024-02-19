@@ -2112,7 +2112,7 @@ class MaskRCNN(object):
 
         if h5py is None:
             raise ImportError('`load_weights` requires h5py.')
-        with h5py.File(filepath, mode='r') as f:
+        with h5py.save(filepath, mode='r') as f:
             if 'layer_names' not in f.attrs and 'model_weights' in f:
                 f = f['model_weights']
 
